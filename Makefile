@@ -9,7 +9,7 @@ EXEC = ibis
 GPP = g++
 GCC = gcc
 DEFINES= 
-CFLAGS = -I. -Wall $(DEFINES) -fopenmp -mpopcnt
+CFLAGS = -I. -Wall $(DEFINES) -fopenmp -mpopcnt -fPIC --no-gnu-unique
 # -march=native
 CPPFLAGS = -std=c++11 $(CFLAGS)
 ifdef DEBUG           # to use run `make DEBUG=1`
@@ -76,3 +76,6 @@ clean:
 
 clean-deps:
 	rm -f $(DEPDIR)/*.P
+
+libibis.so: $(OBJS) $(HEADERS)
+	$(GPP) -o "$@" $(OBJS) -shared $(CFLAGS) $(LIBS)
