@@ -1428,4 +1428,16 @@ int main(int argc, char **argv) {
 		}
 
 	}
+
+	delete transposedData;
+
+	if (bfileNameBed)
+		delete[] bfileNameBed;
+	if (bfileNameBim)
+		delete[] bfileNameBim;
+	if (bfileNameFam)
+		delete[] bfileNameFam;
+
+	Marker::cleanUp();
+	PersonIO<PersonLoopData>::cleanUp();
 }
