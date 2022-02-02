@@ -1429,7 +1429,7 @@ int main(int argc, char **argv) {
 
 	}
 
-	delete transposedData;
+	delete[] transposedData;
 
 	if (bfileNameBed)
 		delete[] bfileNameBed;
