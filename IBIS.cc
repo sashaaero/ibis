@@ -1438,6 +1438,9 @@ int main(int argc, char **argv) {
 	if (bfileNameFam)
 		delete[] bfileNameFam;
 
+	if (SegmentData::altMap)
+		delete SegmentData::altMap;
+
 	Marker::cleanUp();
 	PersonIO<PersonLoopData>::cleanUp();
 }
